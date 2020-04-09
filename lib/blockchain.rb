@@ -14,14 +14,16 @@ devise= ["Bitcoin", "Ethereum", "XRP", "Bitcoin Cash", "EOS", "Litecoin", "Carda
     end
 hash
 
-  #La ou les crypto qui ont la plus petite valeur.
-  sort_value = hash.sort_by { |k,v| v.to_s }
+#TRie des valeurs par ordre alphabétique
+sort_value = hash.sort_by { |k,v| v.to_s }
+for i in hash 
+    print "#{i}\n"
+  end
 
 #puts sort_value.reverse
 max_value = hash.max_by{|k,v| v.to_f}
-  puts "La plus grande valeur de cette liste est #{max_value}"
-  puts hash.min_by{|k,v| v.to_f}
-
-  #Le nombre de crypto contenant le mot "coin".
-  sort_coin = devise.grep(/[coin]/).count
-  puts "il y a #{sort_coin} dans cette liste"
+puts "****** La plus grande valeur de cette liste est #{max_value} ******"
+  
+#Le nombre de crypto contenant le mot "coin".
+sort_coin = devise.grep(/[coin]/).count
+puts "****** il y a #{sort_coin} dans cette liste ******"
